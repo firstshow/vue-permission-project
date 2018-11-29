@@ -83,3 +83,107 @@ yarn run test:unit
 |
 └── vue.config.js vue-cli扩展配置文件
 ```
+
+
+{
+  "code": 200,
+  "message": "获取成功",
+  "data": {
+    list: [{
+        icon: 'dashboard',
+        path: '/home',
+        title: '首页',
+        name: 'home',
+        hasNextMenu: 0,
+        children: [{
+            icon: 'dashboard',
+            path: '/todayData',
+            title: '昨日数据',
+            name: 'todayData',
+            hasNextMenu: 0
+          },
+          {
+            icon: 'dashboard',
+            path: '/yesterData',
+            title: '今日数据',
+            name: 'yesterData',
+            hasNextMenu: 0
+          }
+        ]
+      },
+      {
+        icon: 'dashboard',
+        path: '/peopleManage',
+        title: '人员管理',
+        name: 'peopleManage',
+        hasNextMenu: 1,
+        children: [{
+            icon: 'dashboard',
+            path: '/userManage',
+            title: '用户管理',
+            name: 'userManage',
+            hasNextMenu: 1,
+            children: [{
+                icon: 'dashboard',
+                path: '/userManage1',
+                title: '用户管理-1',
+                name: 'userManage1',
+                hasNextMenu: 0
+              },
+              {
+                icon: 'dashboard',
+                path: '/powerManage1',
+                title: '权限管理-1',
+                name: 'powerManage1',
+                hasNextMenu: 0
+              }
+            ]
+          },
+          {
+            icon: 'dashboard',
+            path: '/powerManage',
+            title: '权限管理',
+            name: 'powerManage',
+            hasNextMenu: 0
+          }
+        ]
+      },
+      {
+        icon: 'dashboard',
+        path: '/about',
+        title: '关于',
+        name: 'about',
+        hasNextMenu: 1,
+        children: [{
+            icon: 'dashboard',
+            path: '/aboutProject',
+            title: '关于项目',
+            name: 'aboutProject',
+            hasNextMenu: 0,
+            children: [{
+              icon: 'dashboard',
+              path: '/crmProject',
+              title: 'CRM项目',
+              name: 'crmProject',
+              hasNextMenu: 0
+            }]
+          },
+          {
+            icon: 'dashboard',
+            path: '/aboutTeam',
+            title: '关于团队',
+            name: 'aboutTeam',
+            hasNextMenu: 0,
+            children: [{
+              icon: 'dashboard',
+              path: '/lifecircleTeam',
+              title: '生活圈团队',
+              name: 'lifecircleTeam',
+              hasNextMenu: 0
+            }]
+          }
+        ]
+      }
+    ]
+  }
+}

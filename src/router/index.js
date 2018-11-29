@@ -10,25 +10,17 @@ const router = new Router({
   routes: [
     {
       path: '/login',
-      component: () => import('@/views/login/index')
-    }, {
-      path: '/',
-      component: () => import('@/views/Root'),
-      children: [
-        {
-          path: '/',
-          name: 'home',
-          component: () => import('@/views/home/')
-        },
-        {
-          path: '/about',
-          name: 'about',
-          component: () => import('@/views/about/')
-        }, {
-          path: '*',
-          redirect: '/'
-        }
-      ]
+      name: 'login',
+      component: () => import('@/views/login/index.vue')
+    },
+    {
+      path: '/404',
+      name: '404',
+      component: () => import('@/views/404/index.vue')
+    },
+    {
+      path: '*',
+      redirect: '/404'
     }
   ]
 })

@@ -6,7 +6,24 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+
+    }
+  },
+  created () {
+    this.initRouter()
+  },
+  methods: {
+    /**
+     * 初始化路由
+     * @author zc
+     */
+    initRouter () {
+      this.$store.dispatch('initRouter')
+    }
+  }
 }
 </script>
 

@@ -46,9 +46,8 @@ export default {
       this.$store.dispatch('ToggleSideBar')
     },
     logout () {
-      this.$store.dispatch('LogOut').then(() => {
-        this.$router.push('/login')
-      })
+      this.$store.dispatch('logonOutServer')
+      window.location.href = '/login'
     }
   }
 }
