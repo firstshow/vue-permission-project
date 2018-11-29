@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <el-button type="primary" v-has="'addRole'" @click="goAddUserPage">新增用户</el-button>
+    <el-button type="primary" v-has="'addRole'" @click="goAddRolePage">新增角色</el-button>
     <el-table
       :data="tableData4">
       <el-table-column
@@ -40,19 +40,19 @@
           <el-button
             @click.native.prevent="deleteRow(scope.$index, tableData4)"
             type="text"
-            size="small" v-has="'lookUser'">
+            size="small" v-has="'lookRole'">
             查看
           </el-button>
           <el-button
             @click.native.prevent="deleteRow(scope.$index, tableData4)"
             type="text"
-            size="small" v-has="'editUser'">
+            size="small" v-has="'editRole'">
             修改
           </el-button>
           <el-button
             @click.native.prevent="deleteRow(scope.$index, tableData4)"
             type="text"
-            size="small" v-has="'delUser'">
+            size="small" v-has="'delRole'">
             移除
           </el-button>
         </template>
@@ -119,9 +119,9 @@ export default {
     }
   },
   methods: {
-    goAddUserPage () {
+    goAddRolePage () {
       this.$router.push({
-        name: 'addUser'
+        name: 'addRole'
       })
     }
   }

@@ -18,13 +18,9 @@ sync(store, router)
  * @author zc
  */
 Vue.directive('has', {
-  bind (el, binding) {
-    console.log(store.state.user)
+  inserted (el, binding) {
     if (!store.state.user.permissionRouterObj[binding.value]) {
-      setTimeout(() => {
-        console.log(el.parentNode)
-        el.parentNode.removeChild(el)
-      }, 1)
+      el.parentNode && el.parentNode.removeChild(el)
     }
   }
 })
@@ -34,11 +30,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
-//
-// {
-//   icon: 'dashboard',
-//     path: '/todayData',
-//   title: '今日数据',
-//   name: 'todayData',
-//   hasNextMenu: 0
-// },

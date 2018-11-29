@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    这是power1111111111页面
+    我是市级分类
   </div>
 </template>
 

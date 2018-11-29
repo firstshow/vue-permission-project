@@ -5,7 +5,7 @@
       router
       :collapse="collapsed"
       :show-timeout="200"
-      :default-active="$route.path"
+      :default-active="'/' + $route.path.split('/')[1]"
       mode="vertical"
       background-color="#304156"
       text-color="#bfcbd9"

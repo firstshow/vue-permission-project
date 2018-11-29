@@ -32,22 +32,46 @@ export default [
     component: () => import('@/views/peopleManage/userManage/index.vue')
   },
   {
-    path: '/powerManage',
-    name: 'powerManage',
-    title: '权限管理',
-    component: () => import('@/views/peopleManage/powerManage/index.vue'),
+    path: '/userManage/addUser',
+    name: 'addUser',
+    title: '新增用户',
+    component: () => import('@/views/peopleManage/userManage/addUser/index.vue')
+  },
+  {
+    path: '/roleManage',
+    name: 'roleManage',
+    component: () => import('@/views/peopleManage/powerManage/roleManage/index.vue')
+  },
+  {
+    path: '/roleManage/addRole',
+    name: 'addRole',
+    title: '新增角色',
+    component: () => import('@/views/peopleManage/powerManage/roleManage/addRole/index.vue')
+  },
+  {
+    path: '/classManage',
+    name: 'classManage',
+    component: () => import('@/views/peopleManage/powerManage/classManage/index.vue'),
     children: [
       {
-        path: '/powerManage/userManage1',
-        name: 'userManage1',
-        title: '用户管理1',
-        component: () => import('@/views/peopleManage/powerManage/userManage1/index.vue')
+        path: '/classManage/countryClass',
+        name: 'countryClass',
+        component: () => import('@/views/peopleManage/powerManage/classManage/countryClass/index.vue')
       },
       {
-        path: '/powerManage/powerManage1',
-        name: 'powerManage1',
-        title: '权限管理1',
-        component: () => import('@/views/peopleManage/powerManage/powerManage1/index.vue')
+        path: '/classManage/provinceClass',
+        name: 'provinceClass',
+        component: () => import('@/views/peopleManage/powerManage/classManage/provinceClass/index.vue')
+      },
+      {
+        path: '/classManage/cityClass',
+        name: 'cityClass',
+        component: () => import('@/views/peopleManage/powerManage/classManage/cityClass/index.vue')
+      },
+      {
+        path: '/classManage/areaClass',
+        name: 'areaClass',
+        component: () => import('@/views/peopleManage/powerManage/classManage/areaClass/index.vue')
       }
     ]
   }

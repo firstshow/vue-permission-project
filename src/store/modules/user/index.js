@@ -22,8 +22,12 @@ const mutations = {
   [types.INIT_ROUTERS]: (state, list) => {
     state.routers = list || state.routers
 
-    // 当没有list，并且本地也不存在路由列表，则不做处理
+    // 当没有list，并且本地也不存在路由列表，则不做处理;添加错误页面重定向404
     if (!list && state.routers.length === 0) {
+      router.addRoutes([{
+        path: '*',
+        redirect: '/404'
+      }])
       return
     }
 
@@ -36,7 +40,10 @@ const mutations = {
         authRouters.children.push(d)
       }
     })
-    router.addRoutes([authRouters])
+    router.addRoutes([authRouters].concat([{
+      path: '*',
+      redirect: '/404'
+    }]))
 
     sessionStorage.setItem('userInfo', JSON.stringify(state))
   },
