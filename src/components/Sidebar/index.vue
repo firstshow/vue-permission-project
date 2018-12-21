@@ -133,7 +133,6 @@ export default {
     }
   },
   created () {
-    console.log(this.permissionList)
   },
   methods: {
     handleOpen (key, keyPath) {

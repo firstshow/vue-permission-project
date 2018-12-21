@@ -1,5 +1,6 @@
 <template>
 <section class="main">
+  <span>{{$route.meta}}</span>
   <transition name="fade" mode="out-in">
     <router-view/>
   </transition>
@@ -8,7 +9,16 @@
 
 <script>
 export default {
-  name: 'Main'
+  name: 'Main',
+  data () {
+    return {
+      keepAliveList: [
+        'roleManage',
+        'roleDetail',
+        'userManage'
+      ]
+    }
+  }
 }
 </script>
 

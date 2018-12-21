@@ -36,7 +36,7 @@ const mutations = {
     let authRouters = routerMap[0]
     routerMap.map((d) => {
       if (state.permissionRouterObj[d.name]) {
-        d.meta = state.metaBoj[d.name]
+        Object.assign(d.meta, state.metaBoj[d.name])
         authRouters.children.push(d)
       }
     })

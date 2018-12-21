@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <el-button type="primary" v-has="'addRole'" @click="goAddUserPage" style="margin-left: 10px;">新增角色</el-button>
+    <h3>角色详情列表</h3>
     <div style="margin: 10px 10px 0;">
       <el-select v-model="reqData.type" placeholder="请选择">
         <el-option
@@ -42,10 +42,10 @@
         width="120">
         <template slot-scope="scope">
           <el-button
-            @click.native.prevent="goNextPage('roleDetail')"
+            @click.native.prevent="goNextPage('roleEdit')"
             type="text"
-            size="small" v-has="'lookUser'">
-            查看
+            size="small" v-has="'editUser'">
+            修改
           </el-button>
         </template>
       </el-table-column>
@@ -62,10 +62,9 @@
 <script>
   import { getUserList } from '@/api/user'
   import paginationMixin from '@/mixins/pagitionMixin'
-  import store from '@/store/index'
   import * as reqDataList from '@/config/reqDataList'
   export default {
-    name: 'userManage',
+    name: 'roleDetail',
     mixins: [paginationMixin],
     data () {
       return {
@@ -87,7 +86,7 @@
         }],
         tableData: [],
         totalCount: 1,
-        reqData: reqDataList.roleManageReqData
+        reqData: reqDataList.roleDetailReqData
       }
     },
     beforeRouteEnter (to, from, next) {

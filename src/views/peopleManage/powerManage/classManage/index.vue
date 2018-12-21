@@ -37,7 +37,6 @@ export default {
     redirectRouterName () {
       setTimeout(() => {
         let redirectRouterName = this.$refs.tabs.children[0].getAttribute('data-name')
-        console.log(redirectRouterName)
         this.$router.push({
           name: redirectRouterName
         })
