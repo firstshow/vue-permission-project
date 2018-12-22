@@ -5,7 +5,9 @@ import store from '@/store/index'
 import * as reqDataList from '@/config/reqDataList'
 export default {
   data() {
-    return {}
+    return {
+      reqData: {...reqDataList[this.$route.name + 'reqData']}
+    }
   },
   beforeRouteEnter (to, from, next) {
     let isBack = from.path.indexOf(to.path) > -1
@@ -19,7 +21,10 @@ export default {
     } else {
       console.log('是返回', store.state.publicInfo.reqDataList[to.name])
     }
-    next()
+    console.log(to.meta.reqData)
+    next(vm => {
+      vm.reqData = to.meta.reqData
+    })
   },
   methods: {
     /**

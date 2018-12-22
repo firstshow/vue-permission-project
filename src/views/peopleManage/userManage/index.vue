@@ -106,9 +106,8 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    getUserList().then(res => {
+    getUserList(to.meta.reqData).then(res => {
       next(vm => {
-        vm.reqData = to.meta.reqData
         vm.tableData = res.data.list
         vm.totalCount = res.data.totalCount
       })
