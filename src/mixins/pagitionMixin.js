@@ -10,19 +10,23 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
+    // 是否是返回
     let isBack = from.path.indexOf(to.path) > -1
+    // 从store里面拿到存储的值
     let reqData = store.state.publicInfo.reqDataList[to.name]
+    // 把reqData存储到对应路由的meta信息中，供单个组件beforeRouteEnter生命周期使用，解决没有next(),拿不到this的问题；
     to.meta.reqData = isBack && reqData ? reqData : {...reqDataList[to.name + 'reqData']}
     if (from.path.indexOf(to.path) === -1) {
-      console.log('离开了该模块')
+      console.log('前进')
+      // 如果是前进，则清除store中存储的该组建的数据
       store.dispatch('uploadListParams', {
         routeName: to.name
       })
     } else {
-      console.log('是返回', store.state.publicInfo.reqDataList[to.name])
+      console.log('后退', store.state.publicInfo.reqDataList[to.name])
     }
-    console.log(to.meta.reqData)
     next(vm => {
+      // 请求参数做赋值
       vm.reqData = to.meta.reqData
     })
   },
